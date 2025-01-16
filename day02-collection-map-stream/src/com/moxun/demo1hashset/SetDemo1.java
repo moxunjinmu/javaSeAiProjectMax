@@ -7,6 +7,9 @@ import java.util.TreeSet;
 
 public class SetDemo1 {
     public static void main(String[] args) {
+
+
+        System.out.println(1111);
 //        创建一个set集合，特点：
         Set<String> set = new HashSet<>(); // 一行经典代码
         set.add("A");
