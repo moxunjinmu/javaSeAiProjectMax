@@ -1,4 +1,4 @@
-package com.moxun.demo4SyncChronizedCode;
+package com.moxun.demo5SyncChronizedMethod;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,10 +12,10 @@ public class Account {
     private double money; // 余额
 
     // 小明和小红都到这里来了取钱
-    public void drawMoney(double money) {
+    public synchronized void drawMoney(double money) {
         // 拿到当前谁来取钱。
         String name = Thread.currentThread().getName();
-        synchronized (this) {
+
             // 判断余额是否足够
             if (this.money >= money) {
                 // 余额足够，取钱
@@ -28,6 +28,6 @@ public class Account {
                 // 余额不足
                 System.out.println(name + "取钱失败，余额不足");
             }
-        }
+
     }
 }
